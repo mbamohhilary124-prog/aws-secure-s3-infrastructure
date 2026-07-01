@@ -19,10 +19,9 @@ The infrastructure is version-controlled with Git, designed to be deployed throu
 The following diagram illustrates the infrastructure deployed by Terraform.
 
 <p align="center">
-  <img src="architecture/aws-s3-architecture.png" alt="AWS Secure S3 Architecture" width="900">
+  <img src="architecture/aws-s3-architecture.png" alt="AWS Secure S3 Architecture" width="100%"
 </p>
 
----
 ---
 
 # Business Problem

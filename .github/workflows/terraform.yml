@@ -1,4 +1,4 @@
-name: Terraform AWS S3 Demo
+name: Terraform CI Pipeline
 
 on:
   pull_request:
@@ -8,13 +8,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  id-token: write
   contents: read
-  pull-requests: write
 
 jobs:
   terraform:
-    name: Terraform Plan and Apply
+    name: Terraform Validate and Plan
     runs-on: ubuntu-latest
 
     defaults:
@@ -28,12 +26,6 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Configure AWS credentials with OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-          aws-region: us-east-1
-
       - name: Terraform fmt
         run: terraform fmt -check
 
@@ -44,8 +36,4 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        run: terraform plan -out=tfplan
-
-      - name: Terraform apply
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve tfplan
+        run: terraform plan
