@@ -14,7 +14,15 @@
 This repository provisions a secure Amazon S3 bucket using **Terraform** while following AWS security best practices.
 
 The infrastructure is version-controlled with Git, designed to be deployed through GitHub Actions, and managed entirely as Infrastructure as Code (IaC). This approach provides repeatable, auditable, and consistent deployments without relying on manual changes in the AWS Management Console.
+## Architecture
 
+The following diagram illustrates the infrastructure deployed by Terraform.
+
+<p align="center">
+  <img src="architecture/aws-s3-architecture.png" alt="AWS Secure S3 Architecture" width="900">
+</p>
+
+---
 ---
 
 # Business Problem
@@ -38,12 +46,26 @@ This solution deploys a secure Amazon S3 bucket with the following controls:
 
 ---
 
-# Architecture
+## Architecture
 
-> **Architecture diagram coming in the next commit.**
+The following diagram illustrates the infrastructure deployed by Terraform.
+
+<p align="center">
+  <img src="architecture/aws-s3-architecture.png" alt="AWS Secure S3 Architecture" width="100%"
+</p>
 
 ---
+## Features
 
+- Infrastructure as Code (Terraform)
+- Secure Amazon S3 bucket provisioning
+- Server-side encryption (AES-256)
+- Public Access Block enabled
+- Bucket Versioning enabled
+- Automated resource naming
+- Modular Terraform configuration
+- GitHub Actions CI/CD ready
+- AWS security best practices
 # Security Controls
 
 | Control | Status |
@@ -133,6 +155,19 @@ terraform destroy
 - CI/CD Foundations
 
 ---
+## Lessons Learned
+
+This project strengthened my understanding of:
+
+- Infrastructure as Code (IaC) using Terraform
+- AWS S3 security best practices
+- AWS IAM authentication
+- Git version control
+- Technical documentation
+- Repeatable cloud infrastructure deployments
+
+---
+
 
 # Future Enhancements
 
